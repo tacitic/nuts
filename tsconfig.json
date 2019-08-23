@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "outDir": "dist",
+    "rootDir": "lib",
+    "target": "es5",
+
+    "strict": false,
+    "declaration": false,
+    "sourceMap": false,
+    "inlineSources": false,
+    "types": ["node"],
+    "allowJs": true
+  },
+  "include": [
+    "lib/**/*"
+  ]
+}
