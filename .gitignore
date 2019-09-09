@@ -32,3 +32,5 @@ docs/_book/
 
 yarn.lock
 /dist
+
+DEV_NOTES.md

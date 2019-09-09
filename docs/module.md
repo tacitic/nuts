@@ -39,6 +39,8 @@ GitHub specific configuration:
 
 - `refreshSecret`: (string) Secret for the GitHub webhook
 
+// TODO(@czyk): Add signedUrls options.
+
 ### Hooks
 
 You can bind interceptors (i.e. hooks) to certain asynchronous actions using `nuts.before(fn)` and `nuts.after(fn)`:
