@@ -242,12 +242,13 @@ Nuts.prototype.onUpdate = function(req, res, next) {
             platform = platforms.detect(platform);
 
             return that.versions.filter({
-                tag: '>='+tag,
+                tag: `>${tag}`,
                 platform: platform,
                 channel: '*'
             });
         })
         .then(versions => {
+
             const latest = _.first(versions);
             if (!latest || latest.tag == tag) return res.status(204).send('No updates'); // XXX(@czyk): Return 204Error
 
@@ -270,7 +271,6 @@ Nuts.prototype.onUpdate = function(req, res, next) {
                 "notes": releaseNotes,
                 "pub_date": latest.published_at.toISOString()
             });
-            next();
         })
         .fail(next);
 };
@@ -290,7 +290,7 @@ Nuts.prototype.onUpdateWin = function(req, res, next) {
             platform = platforms.detect(platform);
 
             return that.versions.filter({
-                tag: '>='+tag,
+                tag: `>${tag}`,
                 platform: platform,
                 channel: '*'
             });
